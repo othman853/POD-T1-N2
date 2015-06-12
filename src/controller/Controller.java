@@ -15,6 +15,8 @@ public abstract class Controller extends HttpServlet{
 	protected static final String GET = "GET";
 	protected static final String POST = "POST";
 	
+	protected static final String LOGIN = "view/login/login.jsp";
+	
 	protected HttpServletRequest request;
 	protected HttpServletResponse response;
 	protected String url;
