@@ -9,6 +9,10 @@
 <body>
 
 	<h1>Cadastro:</h1>
+	
+	<form action="Contatos" method="POST">
+		<input type="submit" value="Vai"/> 
+	</form>
 
 </body>
 </html>
