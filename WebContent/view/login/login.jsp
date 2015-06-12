@@ -15,12 +15,12 @@
 				<div class ="col-xs-12 col-sm-6 col-md-8 col-lg-10 col-md-offset-1">		
 					<div class="panel panel-default">
 						<div class="panel-heading">
-							<h1>Cadastrar Usuário</h1>
+							<h1>Login</h1>
 						</div>
 					</div>
 					
 					<div class="panel-body">
-						<form id="login-usuario" class="form-horizontal" action="/login" method="post">
+						<form id="login-usuario" class="form-horizontal" action="login" method="post">
 							<input type="hidden" name="user.id" />
 						
 							<div class="form-group">
