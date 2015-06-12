@@ -8,8 +8,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 public abstract class Controller extends HttpServlet{
+	
+	protected static final String GET = "GET";
+	protected static final String POST = "POST";
 	
 	protected HttpServletRequest request;
 	protected HttpServletResponse response;
@@ -18,6 +22,11 @@ public abstract class Controller extends HttpServlet{
 	protected void redirecionar(String pagina) throws ServletException, IOException{
 		RequestDispatcher dispatcher = request.getRequestDispatcher(pagina);
 		dispatcher.forward(request, response);		
+	}
+	
+	protected boolean usuarioAutenticado(){
+		HttpSession session = request.getSession();
+		return session.getAttribute("usuario") == null;
 	}
 	
 	@Override
