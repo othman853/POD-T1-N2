@@ -4,6 +4,7 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 
 import model.Dao;
 import model.Login;
@@ -23,7 +24,8 @@ public class LoginController extends Controller{
 		}
 		
 		else{
-			
+			HttpSession session = request.getSession(true);
+			session.setAttribute("usuario", "maroto");			
 		}
 	}
 
