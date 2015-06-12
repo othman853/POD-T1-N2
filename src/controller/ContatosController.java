@@ -23,8 +23,14 @@ public class ContatosController extends Controller{
 		redirecionar(HOME);
 	}	
 	
-	public void listar() throws ServletException, IOException{		
-		redirecionar(LISTAR);		
+	public void listar() throws ServletException, IOException{	
+		if(request.getMethod().equals(GET)){
+			if(!usuarioAutenticado()){
+				redirecionar(LOGIN);			
+			}else{
+				redirecionar(LISTAR);
+			}			
+		}				
 	}	
 	
 	public void cadastrar() throws ServletException, IOException{		
