@@ -28,7 +28,7 @@ public abstract class Controller extends HttpServlet{
 	
 	protected boolean usuarioAutenticado(){
 		HttpSession session = request.getSession();
-		return session.getAttribute("usuario") == null;
+		return session.getAttribute("usuario") != null;
 	}
 	
 	@Override
