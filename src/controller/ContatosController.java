@@ -19,15 +19,19 @@ public class ContatosController extends Controller{
 		super();		
 	}	
 	
-	public void home() throws ServletException, IOException{		
-		redirecionar(HOME);
+	public void home() throws ServletException, IOException{
+		if(!usuarioAutenticado()){
+			redirecionar(LOGIN);
+		}else{		
+			redirecionar(HOME);
+		}
 	}	
 	
 	public void listar() throws ServletException, IOException{	
-		if(request.getMethod().equals(GET)){
+		if(request.getMethod().equals(GET)){			
 			if(!usuarioAutenticado()){
 				redirecionar(LOGIN);			
-			}else{
+			}else{				
 				redirecionar(LISTAR);
 			}			
 		}				
